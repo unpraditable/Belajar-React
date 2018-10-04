@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium from 'radium';
+import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person.js';
 
 class App extends Component {
@@ -94,16 +94,17 @@ class App extends Component {
       
 
     return (
-      <div className="App">
-        <h1>Hello, I am a React Application</h1>
-        <p className={classes.join(' ')}>Is this working?</p>
-        <button 
-        style={style}
-        onClick={this.togglePersonsHandler}>Switch Name</button>
-        
-        {persons}
-        
-      </div>
+    <StyleRoot>
+        <div className="App">
+            <h1>Hello, I am a React Application</h1>
+            <p className={classes.join(' ')}>Is this working?</p>
+            <button 
+            style={style}
+            onClick={this.togglePersonsHandler}>Switch Name</button>
+            {persons}
+        </div>
+    </StyleRoot>
+      
     );
   }
 }
